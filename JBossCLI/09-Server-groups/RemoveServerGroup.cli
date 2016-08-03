@@ -1,2 +1,0 @@
-#/server-group=<ServerGroupName>:remove()
-/server-group=test-server-group:remove()

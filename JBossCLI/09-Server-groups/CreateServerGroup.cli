@@ -1,4 +1,0 @@
-#profile por defecto (default , ha , full , full-ha)
-#socket-binding-group por defecto(full-ha-sockets   full-sockets      ha-sockets        standard-sockets)
-#/server-group=<ServerGroupName>:add(profile=<profile>,socket-binding-group=<SocketBindingGroup>)
-/server-group=test-server-group:add(profile=full-ha,socket-binding-group=full-ha-sockets)

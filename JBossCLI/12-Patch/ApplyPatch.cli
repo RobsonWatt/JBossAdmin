@@ -1,6 +1,0 @@
-#patch apply <path/to/the/patch> --override-all --host=<host>
-
-
-patch apply /opt/servers/patches6.4/jboss-eap-6.4.1-patch.zip --override-all --host=master
-
-patch apply /opt/servers/patches6.4/jboss-eap-6.4.1-patch.zip --override-all --host=slave

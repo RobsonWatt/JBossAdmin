@@ -1,6 +1,0 @@
-#algunos atributos que se puede modificar max-heap-size, max-permgen-size, heap-size
-#/server-group=<ServerGroupName>/jvm=default:write-attribute(name=<AttributeName>,value=<AttributeValue>)
-/server-group=test-server-group/jvm=default:write-attribute(name=max-heap-size,value=1500m)
-/server-group=test-server-group/jvm=default:write-attribute(name=heap-size,value=1500m)
-/server-group=test-server-group/jvm=default:write-attribute(name=max-permgen-size,value=500m)
-

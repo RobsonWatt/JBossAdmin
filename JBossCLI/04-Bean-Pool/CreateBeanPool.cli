@@ -1,3 +1,0 @@
-#/profile=full-ha/subsystem=ejb3/strict-max-bean-instance-pool=<beanPoolName>:add(max-pool-size=20,timeout=5L,timeout-unit="MINUTES")
-
-/profile=full-ha/subsystem=ejb3/strict-max-bean-instance-pool=slsb-strict-max-pool2:add(max-pool-size=20,timeout=5L,timeout-unit="MINUTES")

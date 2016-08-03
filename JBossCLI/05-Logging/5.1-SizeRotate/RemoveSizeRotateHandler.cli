@@ -1,2 +1,0 @@
-/profile=full-ha/subsystem=logging/size-rotating-file-handler=SizeRotate:remove()
-

@@ -1,4 +1,0 @@
-
-#/host=<host>/server-config=<serverName>:add(auto-start=true,group=<ServerGroupName>,socket-binding-port-offset=<offset>)
-/host=master/server-config=server-test:add(auto-start=true,group=test-server-group,socket-binding-port-offset=100)
-/host=slave/server-config=server-test1:add(auto-start=true,group=test-server-group,socket-binding-port-offset=100)

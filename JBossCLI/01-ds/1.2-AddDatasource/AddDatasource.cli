@@ -1,3 +1,0 @@
-#En el contexto de BCI el nombre JNDI del datasource seria java:/ds/tallyman
-
-/profile=full-ha/subsystem=datasources/data-source=oracleDS/:add(min-pool-size=1,prepared-statements-cache-size=10,check-valid-connection-sql="SQL SELECT 1 FROM DUAL",new-connection-sql="SQL SELECT 1 FROM DUAL",connection-url=jdbc:oracle:thin:@host:1521/ORACLE_DB,password=${VAULT::oracleDS::password::1},jndi-name=java:jboss/datasources/oracleDS,max-pool-size=10,driver-name=com.oracle.jdbc,user-name=ORACLE_USER,validate-on-match=true,blocking-timeout-wait-millis=10000,track-statements=NOWARN,flush-strategy=FailingConnectionOnly)

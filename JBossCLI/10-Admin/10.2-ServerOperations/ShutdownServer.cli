@@ -1,3 +1,0 @@
-#/host=<host>/server-config=<serverName>:stop()
-/host=master/server-config=server-test:stop()
-/host=slave/server-config=server-test1:stop()

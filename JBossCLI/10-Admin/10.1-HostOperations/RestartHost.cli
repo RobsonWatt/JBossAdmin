@@ -1,3 +1,0 @@
-#/host=<host>:shutdown(restart=true)
-/host=master:shutdown(restart=true)
-/host=slave:shutdown(restart=true)

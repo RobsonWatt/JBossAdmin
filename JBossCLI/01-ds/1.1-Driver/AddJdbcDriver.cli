@@ -1,1 +1,0 @@
-/profile=full-ha/subsystem=datasources/jdbc-driver=com.oracle.jdbc:add(driver-name="com.oracle.jdbc",driver-class-name="oracle.jdbc.driver.OracleDriver",driver-xa-datasource-class-name="oracle.jdbc.driver.OracleDriver",driver-module-name="com.oracle.jdbc:ojdbc14")

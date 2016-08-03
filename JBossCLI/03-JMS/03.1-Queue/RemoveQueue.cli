@@ -1,3 +1,0 @@
-#/profile=full-ha/subsystem=messaging/hornetq-server=default/jms-queue=<queueName>:remove()
-
-/profile=full-ha/subsystem=messaging/hornetq-server=default/jms-queue=jmsTestQueue:remove()

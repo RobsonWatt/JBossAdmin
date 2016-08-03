@@ -1,3 +1,0 @@
-#En cada host ejecutar el comando (apuntando a la carpeta con el archivo module.xml y al recurso, los recursos se separan por ":") 
-
-module add --name=com.oracle.jdbc --resources=/opt/servers/Workshop/Cli/8-Modules/ojdbc14-10.1.0.5.jar --module-xml=/opt/servers/Workshop/Cli/8-Modules/module.xml --slot=ojdbc14

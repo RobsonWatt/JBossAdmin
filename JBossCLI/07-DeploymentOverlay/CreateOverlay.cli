@@ -1,2 +1,0 @@
-#deployment-overlay add --name=<overlayName> --content=</path/to/the/war/file>=</path/to/the/new/file> --server-groups=<ServerGroupName --deployments=<appName> --redeploy-affected
-deployment-overlay add --name=replaceIndex --content=/index.xhtml=/opt/servers/Workshop/Cli/07-DeploymentOverlay/newIndex.xhtml --server-groups=test-server-group --deployments=simpleApp.war --redeploy-affected
