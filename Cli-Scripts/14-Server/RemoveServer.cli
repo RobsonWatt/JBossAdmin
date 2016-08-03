@@ -1,0 +1,4 @@
+
+#/host=<host>/server-config=<serverName>:remove()
+/host=master/server-config=server-test:remove()
+/host=slave/server-config=server-test1:remove()

@@ -1,0 +1,3 @@
+
+#ojo que el valor es un arreglo de handler, podria ser value=["FILE","SizeRotate"]
+/subsystem=logging/root-logger=ROOT/:write-attribute(name=handlers,value=["SizeRotate"])

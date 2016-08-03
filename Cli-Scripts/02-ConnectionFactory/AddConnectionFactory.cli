@@ -1,0 +1,9 @@
+#el atributo "ha=true" solo se debe configurar cuando el perfil es full-ha
+
+#Simple
+#/profile=full-ha/subsystem=messaging/hornetq-server=default/connection-factory=<jmsConFactoryName>/:add(entries=["<jmsConFactoryName>","java:jboss/exported/<jmsConFactoryName>"],connector={"netty" => undefined})
+/profile=full-ha/subsystem=messaging/hornetq-server=default/connection-factory=JMS_Connection_Factory/:add(entries=["JMS_Connection_Factory","java:jboss/exported/JMS_Connection_Factory"],connector={"netty" => undefined})
+
+
+#mas atributos
+/profile=full-ha/subsystem=messaging/hornetq-server=default/connection-factory=JMS_Connection_Factory/:add(entries=["JMS_Connection_Factory","java:jboss/exported/JMS_Connection_Factory"],min-large-message-size=102400,producer-max-rate=-1,thread-pool-max-size=30,retry-interval-multiplier=1.0,dups-ok-batch-size=1048576,consumer-window-size=1048576,reconnect-attempts=0,scheduled-thread-pool-max-size=5,client-failure-check-period=30000,call-failover-timeout=-1,confirmation-window-size=-1,factory-type=GENERIC,connection-ttl=60000,failover-on-server-shutdown=false,consumer-max-rate=-1,transaction-batch-size=1048576,call-timeout=30000,retry-interval=2000,producer-window-size=65536,connector={"netty" => undefined},max-retry-interval=2000)

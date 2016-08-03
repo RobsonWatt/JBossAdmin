@@ -1,0 +1,2 @@
+#deploy <path/to/the/file> --server-groups=<serverGroupName
+deploy /opt/servers/Workshop/Cli/06-Deployments/simpleApp.war --server-groups=test-server-group

@@ -1,0 +1,3 @@
+#/host=<host>/server-config=<serverName>:start()
+/host=master/server-config=server-test:start()
+/host=slave/server-config=server-test1:start()

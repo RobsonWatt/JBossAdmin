@@ -1,0 +1,1 @@
+/profile=full-ha/subsystem=logging/size-rotating-file-handler=SizeRotate/:add(rotate-size=50m,formatter="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n",level=ALL,max-backup-index=20,file={"path"=>"server-sizerotate.log","relative-to"=>"jboss.server.log.dir"},name=SizeRotate)

@@ -1,0 +1,2 @@
+#/server-group=<ServerGroupName>/jvm=default:add(heap-size=1000m,max-heap-size=1000m,max-permgen-size=512m)
+/server-group=test-server-group/jvm=default:add(heap-size=1000m,max-heap-size=1000m,max-permgen-size=512m)

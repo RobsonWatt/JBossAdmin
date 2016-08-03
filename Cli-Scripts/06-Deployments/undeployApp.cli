@@ -1,0 +1,2 @@
+#undeploy <APPName> --server-groups=<ServerGroupName>
+undeploy simpleApp.war --server-groups=test-server-group
