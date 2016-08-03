@@ -1,6 +1,6 @@
 # Jboss RBAC and Apache Directory Server Integration
 
-### Environment tested
+### Environment used
 - Fedora 22 x86_64
 - 12 GB
 - JBDeveloper
@@ -9,7 +9,7 @@
 - Jboss Enterprise Application Platform 6.4
 
 ### Pre Requisites
-- JAVA_HOME environment variable **SETTED**
+- JAVA_HOME environment variable **CONFIGURED**
 - Jboss Enterprise Application Platform **INSTALLED**
 - JBDeveloper **INSTALLED**
 
@@ -20,7 +20,7 @@ $ sudo yum install -y apacheds.noarch
 ```
 
 #### JBDeveloper ApacheDS Plugin
-Using JBDeveloper install ldap plugin from **Help>Install New Software** menú using the follow url
+From **Help>Install New Software** JBDeveloper menu install the plugin using the follow url
 http://directory.apache.org/studio/update.
 
 #### ApacheDS Server and Connection
@@ -28,23 +28,25 @@ From JBDeveloper LDAP perspective create LDAP Server and a new connection.
 
 #### Import file rbac-ldap.ldif 
 **rbac-ldap.ldif** file has been prepared with some people and roles predefined as follow:  
-dc=RedHat, dc=com  
+dc=example, dc=com  
 ¬¬¬¬¬ ou=People  
-¬¬¬¬¬¬¬¬¬ uid=robson_admin  
-¬¬¬¬¬¬¬¬¬ uid=robson_audit  
-¬¬¬¬¬¬¬¬¬ uid=robson_deploy  
-¬¬¬¬¬¬¬¬¬ uid=robson_manten  
-¬¬¬¬¬¬¬¬¬ uid=robson_monitor  
-¬¬¬¬¬¬¬¬¬ uid=robson_opera  
-¬¬¬¬¬¬¬¬¬ uid=robson_super  
+¬¬¬¬¬¬¬¬¬ uid=user_admin  
+¬¬¬¬¬¬¬¬¬ uid=user_audit  
+¬¬¬¬¬¬¬¬¬ uid=user_deploy  
+¬¬¬¬¬¬¬¬¬ uid=user_maintain  
+¬¬¬¬¬¬¬¬¬ uid=user_monitor  
+¬¬¬¬¬¬¬¬¬ uid=user_opera  
+¬¬¬¬¬¬¬¬¬ uid=user_super  
 ¬¬¬¬ ou=Roles  
-¬¬¬¬¬¬¬¬¬ cn=Administradores  
-¬¬¬¬¬¬¬¬¬ cn=Auditores  
-¬¬¬¬¬¬¬¬¬ cn=Deployadores  
-¬¬¬¬¬¬¬¬¬ cn=Mantenedores  
-¬¬¬¬¬¬¬¬¬ cn=Monitores  
-¬¬¬¬¬¬¬¬¬ cn=Operadores  
-¬¬¬¬¬¬¬¬¬ cn=SuperUsuarios  
+¬¬¬¬¬¬¬¬¬ cn=gr_administrators  
+¬¬¬¬¬¬¬¬¬ cn=gr_auditors  
+¬¬¬¬¬¬¬¬¬ cn=gr_deployers  
+¬¬¬¬¬¬¬¬¬ cn=gr_maintainers  
+¬¬¬¬¬¬¬¬¬ cn=gr_monitors  
+¬¬¬¬¬¬¬¬¬ cn=gr_operators  
+¬¬¬¬¬¬¬¬¬ cn=gr_superusers  
+
+**NOTE: The password for all users is secret123**
 
 #### Jboss RBAC and Apache DS Configuration
 Start Jboss EAP and execute the follow instruction:
@@ -52,7 +54,7 @@ Start Jboss EAP and execute the follow instruction:
 $ sh $JBOSS_HOME/bin/jboss-cli.sh -c --file=/path/to/rbac-ldap.cli
 ```
 
-This Cli batch configure:
+This Cli configure:
 - Audit Log
 - RBAC
 - LDAP Realm
@@ -63,4 +65,4 @@ This Cli batch configure:
 You can review my **standalone.xml** file if you preffer.
 
 #### Test the configuration
-Try to access to http://ip-address:9990 using a user defined into apache directory server.
+Test the Jboss web console access http://ip-address:9990
