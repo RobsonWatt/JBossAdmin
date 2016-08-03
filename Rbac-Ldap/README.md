@@ -20,14 +20,14 @@ $ sudo yum install -y apacheds.noarch
 ```
 
 #### JBDeveloper ApacheDS Plugin
-From **Help>Install New Software** JBDeveloper menu install the plugin using the follow url
+From **Help>Install New Software** JBDeveloper menu, install the plugin using the follow url
 http://directory.apache.org/studio/update.
 
 #### ApacheDS Server and Connection
-From JBDeveloper LDAP perspective create LDAP Server and a new connection.
+From JBDeveloper LDAP perspective view, create LDAP Server and a new connection.
 
 #### Import file rbac-ldap.ldif 
-Import **rbac-ldap.ldif** into default partition "dc=example,dc=com", if it's not existe you'll need to create it before,  **rbac-ldap.ldif** has been prepared with some people and roles predefined as follow:  
+Import **rbac-ldap.ldif** into default partition "dc=example,dc=com", if it doesn't exists you'll need to create it first,  **rbac-ldap.ldif** has been prepared with some people and roles predefined as follows:  
 dc=example, dc=com  
 ¬¬¬¬¬ ou=People  
 ¬¬¬¬¬¬¬¬¬ uid=user_admin  
@@ -56,7 +56,7 @@ Start Jboss EAP and execute:
 $ sh $JBOSS_HOME/bin/jboss-cli.sh -c --file=/path/to/rbac-ldap.cli
 ```
 
-This Cli configure:
+This Cli will configure:
 - Audit Log
 - RBAC
 - LDAP Realm
@@ -64,7 +64,7 @@ This Cli configure:
 - LDAP Groups mapping to Jboss RBAC roles
 - Management Interface LDAP Realm  
 
-You can review my **standalone.xml** file if you preffer.
+You can review my **standalone.xml** file if you prefer.
 
 #### Test the configuration
 Test the Jboss web console access http://ip-address:9990
