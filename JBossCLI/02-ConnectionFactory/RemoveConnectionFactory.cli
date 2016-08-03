@@ -1,0 +1,5 @@
+
+#/profile=full-ha/subsystem=messaging/hornetq-server=default/connection-factory=<jmsConFactoryName>:remove()
+/profile=full-ha/subsystem=messaging/hornetq-server=default/connection-factory=JMS_Connection_Factory:remove()
+
+

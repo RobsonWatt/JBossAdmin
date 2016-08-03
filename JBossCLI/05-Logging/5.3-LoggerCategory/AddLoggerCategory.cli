@@ -1,0 +1,5 @@
+#Los handlers se pueden definir como un arreglo por lo que para configurar mas de uno se deberia usar los siguiente handlers=["SizeRotate","PeriodicFile"]
+#logLevel (ALL      FINEST   FINER    TRACE    DEBUG    FINE     CONFIG   INFO     WARN     WARNING  ERROR    SEVERE   FATAL    OFF)
+#/profile=full-ha/subsystem=logging/logger=<package>:add(category=<package>,handlers=["<AppenderName>"],level=<logLevel>)
+
+/profile=full-ha/subsystem=logging/logger=cl.test.logger:add(category=cl.test.logger,handlers=["SizeRotate"],level=ALL)

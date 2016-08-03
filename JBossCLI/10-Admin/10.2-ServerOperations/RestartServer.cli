@@ -1,0 +1,3 @@
+#/host=<host>/server-config=<serverName>:restart()
+/host=master/server-config=server-test:restart()
+/host=slave/server-config=server-test1:restart()

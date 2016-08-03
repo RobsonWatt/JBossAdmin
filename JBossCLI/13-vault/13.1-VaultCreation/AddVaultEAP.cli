@@ -1,0 +1,7 @@
+#para cada host se debe agregar el vault
+
+
+/host=master/core-service=vault:add(vault-options=[("KEYSTORE_URL" => "${jboss.domain.config.dir}/vault.keystore"), ("KEYSTORE_PASSWORD" => "MASK-EjDuL0jBRWB"), ("KEYSTORE_ALIAS" => "vault"), ("SALT" => "87651234"),("ITERATION_COUNT" => "50"), ("ENC_FILE_DIR" => "${jboss.home.dir}/vault")])
+
+
+/host=slave/core-service=vault:add(vault-options=[("KEYSTORE_URL" => "${jboss.domain.config.dir}/vault.keystore"), ("KEYSTORE_PASSWORD" => "MASK-EjDuL0jBRWB"), ("KEYSTORE_ALIAS" => "vault"), ("SALT" => "87651234"),("ITERATION_COUNT" => "50"), ("ENC_FILE_DIR" => "${jboss.home.dir}/vault")])

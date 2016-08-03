@@ -1,0 +1,1 @@
+/profile=full-ha/subsystem=datasources/data-source=oracleDS/:remove()

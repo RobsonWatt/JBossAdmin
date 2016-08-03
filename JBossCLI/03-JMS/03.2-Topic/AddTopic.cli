@@ -1,0 +1,3 @@
+#/profile=full-ha/subsystem=messaging/hornetq-server=default/jms-topic=<TopicName>/:add(entries=["<TopicName>","java:jboss/exported/<TopicName>"])
+
+/profile=full-ha/subsystem=messaging/hornetq-server=default/jms-topic=jmsTopicTest/:add(entries=["jmsTopicTest","java:jboss/exported/jmsTopicTest"])

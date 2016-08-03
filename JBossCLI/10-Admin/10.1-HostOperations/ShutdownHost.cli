@@ -1,0 +1,4 @@
+#/host=<host>:shutdown(restart=false)
+#Luego de esta operacion la plataforma jboss quedara apagada y desconectada
+/host=master:shutdown(restart=false)
+/host=slave:shutdown(restart=false)
