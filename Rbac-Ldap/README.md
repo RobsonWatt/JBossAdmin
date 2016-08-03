@@ -46,10 +46,12 @@ dc=example, dc=com
 ¬¬¬¬¬¬¬¬¬ cn=gr_operators  
 ¬¬¬¬¬¬¬¬¬ cn=gr_superusers  
 
-**NOTE: The password for all users is secret123**
+```sh
+NOTE: The password for all users is secret123
+```
 
 #### Jboss RBAC and Apache DS Configuration
-Start Jboss EAP and execute the follow instruction:
+Start Jboss EAP and execute:
 ```sh
 $ sh $JBOSS_HOME/bin/jboss-cli.sh -c --file=/path/to/rbac-ldap.cli
 ```
