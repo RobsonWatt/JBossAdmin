@@ -1,16 +1,16 @@
 
-# Script Batch para crear Security Realm de LDAP
+# Script Batch to create LDAP and RBAC Integration
 batch
 
-#Liga o registro de atividades nas ferramentas de administração (LOG de Auditoria)
-# /core-service=management/access=audit/logger=audit-log:write-attribute(name=enabled,value=false)
+# Enable the Audit Log
+ /core-service=management/access=audit/logger=audit-log:write-attribute(name=enabled,value=false)
 
 
-# Activa el modo RBAC de manejo de roles para Wildfly/Jboss
+# Enable RBAC
 /core-service=management/access=authorization:write-attribute(name=provider,value=rbac)
 
 
-# Agrega roles pre-definidos del servidor
+# Add Roles to Jboss
 /core-service=management/access=authorization/role-mapping=Monitor:add()
 /core-service=management/access=authorization/role-mapping=Operator:add()
 /core-service=management/access=authorization/role-mapping=Maintainer:add()
@@ -19,34 +19,33 @@ batch
 /core-service=management/access=authorization/role-mapping=Auditor:add()
 
 
-# Agrega el mapeo de grupos de LDAP a roles de RBAC
-# include=$alias_del_grupo
-# name=$nombre_grupo_ldap
-/core-service=management/access=authorization/role-mapping=SuperUser/include=gr_superusers:add(name=SuperUsuarios,type=GROUP)
-/core-service=management/access=authorization/role-mapping=Monitor/include=gr_monitors:add(name=Monitores,type=GROUP)
-/core-service=management/access=authorization/role-mapping=Operator/include=gr_operators:add(name=Operadores,type=GROUP)
-/core-service=management/access=authorization/role-mapping=Maintainer/include=gr_maintainers:add(name=Mantenedores,type=GROUP)
-/core-service=management/access=authorization/role-mapping=Deployer/include=gr_deployers:add(name=Deployadores,type=GROUP)
-/core-service=management/access=authorization/role-mapping=Administrator/include=gr_administrators:add(name=Administradores,type=GROUP)
-/core-service=management/access=authorization/role-mapping=Auditor/include=gr_auditors:add(name=Auditores,type=GROUP)
+# LDAP groups mapped to RBAC roles
+
+/core-service=management/access=authorization/role-mapping=SuperUser/include=gr_superusers:add(name=gr_superusers,type=GROUP)
+/core-service=management/access=authorization/role-mapping=Monitor/include=gr_monitors:add(name=gr_monitors,type=GROUP)
+/core-service=management/access=authorization/role-mapping=Operator/include=gr_operators:add(name=gr_operators,type=GROUP)
+/core-service=management/access=authorization/role-mapping=Maintainer/include=gr_maintainers:add(name=gr_maintainers,type=GROUP)
+/core-service=management/access=authorization/role-mapping=Deployer/include=gr_deployers:add(name=gr_deployers,type=GROUP)
+/core-service=management/access=authorization/role-mapping=Administrator/include=gr_administrators:add(name=gr_administrators,type=GROUP)
+/core-service=management/access=authorization/role-mapping=Auditor/include=gr_auditors:add(name=gr_Auditors,type=GROUP)
 
 
 
-# Creación de autenticación Realm para LDAP
+# LDAP Realm Configuration
 
 /core-service=management/ldap-connection=LDAPConnection:add(url="ldap://127.0.0.1:10389", search-dn="uid=admin,ou=system", search-credential="secret")
 /core-service=management/security-realm=LdapRealm:add(map-groups-to-roles=true)
-/core-service=management/security-realm=LdapRealm/authentication=ldap:add(base-dn="ou=People,dc=RedHat,dc=com",connection=LDAPConnection,username-attribute=uid)
+/core-service=management/security-realm=LdapRealm/authentication=ldap:add(base-dn="ou=People,dc=example,dc=com",connection=LDAPConnection,username-attribute=uid)
 /core-service=management/security-realm=LdapRealm/authorization=ldap:add(connection=LDAPConnection)
-/core-service=management/security-realm=LdapRealm/authorization=ldap/username-to-dn=username-filter:add(attribute=uid,base-dn="ou=people,dc=RedHat,dc=com",recursive=false,user-dn-attribute=dn)
+/core-service=management/security-realm=LdapRealm/authorization=ldap/username-to-dn=username-filter:add(attribute=uid,base-dn="ou=people,dc=example,dc=com",recursive=false,user-dn-attribute=dn)
 /core-service=management/security-realm=LdapRealm/authorization=ldap/username-to-dn=username-filter:write-attribute(name=force,value=false)
-/core-service=management/security-realm=LdapRealm/authorization=ldap/group-search=group-to-principal:add(base-dn="ou=Roles,dc=RedHat,dc=com",group-name-attribute=cn,group-name="SIMPLE",group-dn-attribute="dn",iterative="true",search-by=DISTINGUISHED_NAME,recursive=true,principal-attribute=member) 
+/core-service=management/security-realm=LdapRealm/authorization=ldap/group-search=group-to-principal:add(base-dn="ou=Roles,dc=example,dc=com",group-name-attribute=cn,group-name="SIMPLE",group-dn-attribute="dn",iterative="true",search-by=DISTINGUISHED_NAME,recursive=true,principal-attribute=member) 
 /core-service=management/management-interface=http-interface:write-attribute(name=security-realm,value=LdapRealm)
 
 
-# Solicite a execução de fato
+# Execute the batch
 run-batch
 
 
-# O servidor precisa recarregar a configuração
+# Reload Configuration
 :reload

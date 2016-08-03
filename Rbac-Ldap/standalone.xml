@@ -50,17 +50,17 @@
             </security-realm>
             <security-realm name="LdapRealm">
                 <authentication>
-                    <ldap connection="LDAPConnection" base-dn="ou=People,dc=RedHat,dc=com">
+                    <ldap connection="LDAPConnection" base-dn="ou=People,dc=example,dc=com">
                         <username-filter attribute="uid"/>
                     </ldap>
                 </authentication>
                 <authorization map-groups-to-roles="true">
                     <ldap connection="LDAPConnection">
                         <username-to-dn force="false">
-                            <username-filter base-dn="ou=people,dc=RedHat,dc=com" recursive="false" user-dn-attribute="dn" attribute="uid"/>
+                            <username-filter base-dn="ou=people,dc=example,dc=com" recursive="false" user-dn-attribute="dn" attribute="uid"/>
                         </username-to-dn>
                         <group-search group-name="SIMPLE" iterative="true" group-dn-attribute="dn" group-name-attribute="cn">
-                            <group-to-principal search-by="DISTINGUISHED_NAME" base-dn="ou=Roles,dc=RedHat,dc=com" recursive="true">
+                            <group-to-principal search-by="DISTINGUISHED_NAME" base-dn="ou=Roles,dc=example,dc=com" recursive="true">
                                 <membership-filter principal-attribute="member"/>
                             </group-to-principal>
                         </group-search>
@@ -97,37 +97,37 @@
                 <role name="SuperUser">
                     <include>
                         <user name="$local"/>
-                        <group alias="gr_superusers" name="SuperUsuarios"/>
+                        <group alias="gr_superusers" name="gr_superusers"/>
                     </include>
                 </role>
                 <role name="Monitor">
                     <include>
-                        <group alias="gr_monitors" name="Monitores"/>
+                        <group alias="gr_monitors" name="gr_monitors"/>
                     </include>
                 </role>
                 <role name="Operator">
                     <include>
-                        <group alias="gr_operators" name="Operadores"/>
+                        <group alias="gr_operators" name="gr_operators"/>
                     </include>
                 </role>
                 <role name="Maintainer">
                     <include>
-                        <group alias="gr_maintainers" name="Mantenedores"/>
+                        <group alias="gr_maintainers" name="gr_maintainers"/>
                     </include>
                 </role>
                 <role name="Deployer">
                     <include>
-                        <group alias="gr_deployers" name="Deployadores"/>
+                        <group alias="gr_deployers" name="gr_deployers"/>
                     </include>
                 </role>
                 <role name="Administrator">
                     <include>
-                        <group alias="gr_administrators" name="Administradores"/>
+                        <group alias="gr_administrators" name="gr_administrators"/>
                     </include>
                 </role>
                 <role name="Auditor">
                     <include>
-                        <group alias="gr_auditors" name="Auditores"/>
+                        <group alias="gr_auditors" name="gr_Auditors"/>
                     </include>
                 </role>
             </role-mapping>
