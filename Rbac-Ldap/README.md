@@ -27,7 +27,7 @@ http://directory.apache.org/studio/update.
 From JBDeveloper LDAP perspective create LDAP Server and a new connection.
 
 #### Import file rbac-ldap.ldif 
-**rbac-ldap.ldif** file has been prepared with some people and roles predefined as follow:  
+Import **rbac-ldap.ldif** into default partition "dc=example,dc=com", if it's not existe you'll need to create it before,  **rbac-ldap.ldif** has been prepared with some people and roles predefined as follow:  
 dc=example, dc=com  
 ¬¬¬¬¬ ou=People  
 ¬¬¬¬¬¬¬¬¬ uid=user_admin  

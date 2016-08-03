@@ -1,21 +1,10 @@
 version: 1
 
-dn: ou=Roles,dc=example,dc=com
+dn: ou=People,dc=example,dc=com
 objectClass: organizationalUnit
 objectClass: top
-ou: Roles
+ou: People
 
-dn: cn=gr_auditors,ou=Roles,dc=example,dc=com
-objectClass: groupOfNames
-objectClass: top
-cn: gr_auditors
-member: uid=user_audit,ou=People,dc=example,dc=com
-
-dn: cn=gr_deployers,ou=Roles,dc=example,dc=com
-objectClass: groupOfNames
-objectClass: top
-cn: gr_deployers
-member: uid=user_deploy,ou=People,dc=example,dc=com
 
 dn: uid=user_deploy,ou=People,dc=example,dc=com
 objectClass: organizationalPerson
@@ -28,16 +17,6 @@ uid: user_deploy
 userPassword:: e3NoYTI1Nn0vUGN3dHRsU051elR5Znd0a3RlMnNyc0dGUlNXR3V3RUhXeDZjW
  kwxa3VRPQ==
 
-dn: dc=example,dc=com
-objectclass: top
-objectclass: domain
-dc: example
-
-dn: cn=gr_operators,ou=Roles,dc=example,dc=com
-objectClass: groupOfNames
-objectClass: top
-cn: gr_operators
-member: uid=user_opera,ou=People,dc=example,dc=com
 
 dn: uid=user_monitor,ou=People,dc=example,dc=com
 objectClass: organizationalPerson
@@ -61,12 +40,6 @@ uid: user_maintain
 userPassword:: e3NoYTI1Nn0vUGN3dHRsU051elR5Znd0a3RlMnNyc0dGUlNXR3V3RUhXeDZjW
  kwxa3VRPQ==
 
-dn: cn=gr_administrators,ou=Roles,dc=example,dc=com
-objectClass: groupOfNames
-objectClass: top
-cn: gr_administrators
-member: uid=user_admin,ou=People,dc=example,dc=com
-
 dn: uid=user_admin,ou=People,dc=example,dc=com
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
@@ -89,11 +62,6 @@ uid: user_super
 userPassword:: e3NoYTI1Nn0vUGN3dHRsU051elR5Znd0a3RlMnNyc0dGUlNXR3V3RUhXeDZjW
  kwxa3VRPQ==
 
-dn: cn=gr_monitors,ou=Roles,dc=example,dc=com
-objectClass: groupOfNames
-objectClass: top
-cn: gr_monitors
-member: uid=user_monitor,ou=People,dc=example,dc=com
 
 dn: uid=user_audit,ou=People,dc=example,dc=com
 objectClass: organizationalPerson
@@ -117,20 +85,68 @@ uid: user_opera
 userPassword:: e3NoYTI1Nn0vUGN3dHRsU051elR5Znd0a3RlMnNyc0dGUlNXR3V3RUhXeDZjW
  kwxa3VRPQ==
 
-dn: cn=gr_maintainers,ou=Roles,dc=example,dc=com
-objectClass: groupOfNames
-objectClass: top
-cn: gr_maintainers
-member: uid=user_maintain,ou=People,dc=example,dc=com
 
-dn: ou=People,dc=example,dc=com
+
+dn: ou=Roles,dc=example,dc=com
 objectClass: organizationalUnit
 objectClass: top
-ou: People
+ou: Roles
+
+dn: cn=gr_auditors,ou=Roles,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: gr_auditors
+member: uid=user_audit,ou=People,dc=example,dc=com
+
 
 dn: cn=gr_superusers,ou=Roles,dc=example,dc=com
 objectClass: groupOfNames
 objectClass: top
 cn: gr_superusers
 member: uid=user_super,ou=People,dc=example,dc=com
+
+
+dn: cn=gr_deployers,ou=Roles,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: gr_deployers
+member: uid=user_deploy,ou=People,dc=example,dc=com
+
+
+
+dn: dc=example,dc=com
+objectclass: top
+objectclass: domain
+dc: example
+
+dn: cn=gr_operators,ou=Roles,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: gr_operators
+member: uid=user_opera,ou=People,dc=example,dc=com
+
+
+dn: cn=gr_administrators,ou=Roles,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: gr_administrators
+member: uid=user_admin,ou=People,dc=example,dc=com
+
+
+
+dn: cn=gr_monitors,ou=Roles,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: gr_monitors
+member: uid=user_monitor,ou=People,dc=example,dc=com
+
+
+
+dn: cn=gr_maintainers,ou=Roles,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: gr_maintainers
+member: uid=user_maintain,ou=People,dc=example,dc=com
+
+
 
